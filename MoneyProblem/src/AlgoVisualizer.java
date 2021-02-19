@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.Arrays;
 
 public class AlgoVisualizer {
 
@@ -25,17 +26,17 @@ public class AlgoVisualizer {
     public void run(){
 
         while(true){
-
+            Arrays.sort(money);
             frame.render(money);
             AlgoVisHelper.pause(DELAY);
 
             for(int k = 0; k < 50; k++){
                 for(int i = 0 ; i < money.length; i ++){
-                    if(money[i] > 0){
+                    //if(money[i] > 0){
                         int j = (int)(Math.random() * money.length);
                         money[i] -= 1;
                         money[j] += 1;
-                    }
+                    //}
                 }
             }
             
