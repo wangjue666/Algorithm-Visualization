@@ -1,7 +1,9 @@
 public class SelectionSortData {
 
     private int[] numbers;
-
+    public int orderIndex = -1;  // [0, orderIndex) 是循环不变量
+    public int currentMinIndex = -1;
+    public int currentCompareIndex = -1;
     public SelectionSortData(int N, int randomBound){
 
         numbers = new int[N];
