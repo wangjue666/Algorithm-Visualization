@@ -1,3 +1,4 @@
+package com.vis.sort;
 public class SelectionSortData {
 
     private int[] numbers;

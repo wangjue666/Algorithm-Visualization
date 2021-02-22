@@ -1,6 +1,7 @@
+package com.vis.sort;
 import java.awt.*;
 import javax.swing.*;
-import javax.xml.crypto.Data;
+
 
 public class AlgoFrame extends JFrame{
 

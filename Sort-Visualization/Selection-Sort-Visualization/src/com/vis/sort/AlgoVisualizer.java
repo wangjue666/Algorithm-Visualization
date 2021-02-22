@@ -1,3 +1,4 @@
+package com.vis.sort;
 import java.awt.*;
 
 public class AlgoVisualizer {
