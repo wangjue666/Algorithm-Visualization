@@ -35,7 +35,7 @@ public class AlgoVisualizerRandom {
         Position first = new Position(data.getEntranceX(), data.getEntranceY()+1);
         queue.add(first);
         data.visited[first.getX()][first.getY()] = true;
-
+        data.openMist(data.getEntranceX(), data.getEntranceY());
         while(queue.size() != 0){
             Position curPos = queue.remove();
 
@@ -48,6 +48,7 @@ public class AlgoVisualizerRandom {
                         && data.maze[newX][newY] == MazeData.ROAD){
                     queue.add(new Position(newX, newY));
                     data.visited[newX][newY] = true;
+                    data.openMist(newX, newY);
                     setData(curPos.getX() + d[i][0], curPos.getY() + d[i][1]);
                 }
             }
