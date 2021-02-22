@@ -1,3 +1,4 @@
+package maze.gen.dfs;
 import java.util.ArrayList;
 
 public class RandomQueue<E>{
