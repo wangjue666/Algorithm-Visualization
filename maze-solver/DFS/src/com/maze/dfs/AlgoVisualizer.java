@@ -29,23 +29,23 @@ public class AlgoVisualizer {
 
     public void run(){
 
-        setData(-1, -1);
+        setData(-1, -1, false);
 
         go(data.getEntranceX(), data.getEntranceY());
 
-        setData(-1, -1);
+        setData(-1, -1, false);
     }
 
-    private void go(int x, int y){
+    private boolean go(int x, int y){
 
         if(!data.inArea(x,y))
             throw new IllegalArgumentException("x,y are out of index in go function!");
 
         data.visited[x][y] = true;
-        setData(x, y);
+        setData(x, y, true);
 
         if(x == data.getExitX() && y == data.getExitY())
-            return;
+            return true;
 
         for(int i = 0 ; i < 4 ; i ++){
             int newX = x + d[i][0];
@@ -53,15 +53,15 @@ public class AlgoVisualizer {
             if(data.inArea(newX, newY) &&
                     data.getMaze(newX,newY) == MazeData.ROAD &&
                     !data.visited[newX][newY])
-                go(newX, newY);
+                if(go(newX, newY)) return true;
         }
-
-        return;
+        setData(x, y, false);
+        return false;
     }
 
-    private void setData(int x, int y){
+    private void setData(int x, int y, boolean isPath){
         if(data.inArea(x, y))
-            data.path[x][y] = true;
+            data.path[x][y] = isPath;
 
         frame.render(data);
         AlgoVisHelper.pause(DELAY);
