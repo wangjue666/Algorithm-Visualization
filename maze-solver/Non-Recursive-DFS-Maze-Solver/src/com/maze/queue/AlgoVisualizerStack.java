@@ -2,7 +2,7 @@ package com.maze.queue;
 import java.awt.*;
 import java.util.Stack;
 
-public class AlgoVisualizer {
+public class AlgoVisualizerStack {
 
     private static int DELAY = 5;
     private static int blockSide = 8;
@@ -11,7 +11,7 @@ public class AlgoVisualizer {
     private AlgoFrame frame;
     private static final int d[][] = {{-1,0},{0,1},{1,0},{0,-1}};
 
-    public AlgoVisualizer(String mazeFile){
+    public AlgoVisualizerStack(String mazeFile){
 
         // 初始化数据
         data = new MazeData(mazeFile);
@@ -86,6 +86,6 @@ public class AlgoVisualizer {
 
         String mazeFile = "maze-solver/DFS/maze_101_101.txt";
 
-        AlgoVisualizer vis = new AlgoVisualizer(mazeFile);
+        AlgoVisualizerStack vis = new AlgoVisualizerStack(mazeFile);
     }
 }
