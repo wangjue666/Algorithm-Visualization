@@ -29,7 +29,20 @@ public class MineSweeperData {
                 mines[i][j] = false;
             }
 
-        mines[0][0] = true;
+        generateMines(mineNumber);
+    }
+
+    public void generateMines(int mineNumber){
+        for(int i = 0 ; i < mineNumber ; i ++){
+            while(true){
+                int x = (int)(Math.random() * N);
+                int y = (int)(Math.random() * M);
+                if(!mines[x][y]){
+                    mines[x][y] = true;
+                    break;
+                }
+            }
+        }
     }
 
     public int N(){ return N; }
