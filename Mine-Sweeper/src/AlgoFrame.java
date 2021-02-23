@@ -77,7 +77,7 @@ public class AlgoFrame extends JFrame{
                         else
                             AlgoVisHelper.putImage(g2d, j*w, i*h, MineSweeperData.blockImageURL);
                     }
-            }
+                }
 
         }
 

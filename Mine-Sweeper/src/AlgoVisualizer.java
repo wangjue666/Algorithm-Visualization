@@ -27,14 +27,21 @@ public class AlgoVisualizer {
 
     public void run(){
 
-        this.setData(false, -1, -1);
+        setData(false, -1, -1);
 
     }
 
     private void setData(boolean isLeftClicked, int x, int y){
+
         if(data.inArea(x, y)){
-            if(isLeftClicked)
-                data.open[x][y] = true;
+            if(isLeftClicked){
+                if(data.isMine(x, y)){
+                    // Game Over
+                    data.open[x][y] = true;
+                }
+                else
+                    data.open(x, y);
+            }
             else
                 data.flags[x][y] = !data.flags[x][y];
         }
