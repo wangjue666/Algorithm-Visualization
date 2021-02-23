@@ -29,7 +29,7 @@ public class MineSweeperData {
                 mines[i][j] = false;
             }
 
-        generateMines3(mineNumber);
+        generateMines4(mineNumber);
     }
 
     public void generateMines(int mineNumber){
@@ -78,6 +78,28 @@ public class MineSweeperData {
 
             int x2 = (int)(Math.random() * N);
             int y2 = (int)(Math.random() * M);
+
+            swap(x1, y1, x2, y2);
+        }
+    }
+
+    public void generateMines4(int mineNumber){
+
+        for(int i = 0 ; i < mineNumber ; i ++){
+            int x = i/M;
+            int y = i%M;
+            mines[x][y] = true;
+        }
+
+        for(int i = N*M-1 ; i >= 0; i --){
+
+            int x1 = i/M;
+            int y1 = i%M;
+
+            int randNumber = (int)(Math.random() * (i+1));
+
+            int x2 = randNumber/M;
+            int y2 = randNumber%M;
 
             swap(x1, y1, x2, y2);
         }
